@@ -7,6 +7,7 @@ import createSagaMiddleware, { delay } from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
 import { schema, normalize } from 'normalizr';
 import uuid from 'uuid/v4';
+import thunk from 'redux-thunk';
 import './index.css';
 
 // filters
@@ -203,7 +204,7 @@ const saga = createSagaMiddleware();
 const store = createStore(
   rootReducer,
   undefined,
-  applyMiddleware(saga, logger)
+  applyMiddleware(thunk, saga, logger)
 );
 
 saga.run(watchAddTodoWithNotification);
