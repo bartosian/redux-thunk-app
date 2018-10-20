@@ -190,7 +190,7 @@ function* handleAddTodoWithNotification(action) {
 const rootReducer = combineReducers({
   todoState: todoReducer,
   filterState: filterReducer,
-  notificationState: notificationReducer,
+  notificationState: notificationReducer
 });
 
 const logger = createLogger();
