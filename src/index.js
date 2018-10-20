@@ -91,15 +91,12 @@ function applySetFilter(state, action) {
   return action.filter;
 }
 
-function notificationReducer(state = {}, action) {
-  switch(action.type) {
-    case TODO_ADD : {
-      return applySetNotifyAboutAddTodo(state, action);
-    }
-    case NOTIFICATION_HIDE : {
-      return applyRemoveNotification(state, action);
-    }
-    default : return state;
+function notificationReducer(state={}, action) {
+  switch (action.type) {
+      case TODO_ADD: {
+        return applySetNotifyAboutAddTodo(state, action);
+      }
+      default: return state;
   }
 }
 
