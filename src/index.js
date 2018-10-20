@@ -96,6 +96,10 @@ function notificationReducer(state={}, action) {
       case TODO_ADD: {
         return applySetNotifyAboutAddTodo(state, action);
       }
+
+      case NOTIFICATION_HIDE: {
+        return applyRemoveNotification(state, action);
+      }
       default: return state;
   }
 }
