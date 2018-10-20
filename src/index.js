@@ -121,10 +121,13 @@ function applyRemoveNotification(state, action) {
 // action creators
 
 function doAddTodoWithNotification(id, name) {
-  return {
-    type: TODO_ADD_WITH_NOTIFICATION,
-    todo: { id, name },
-  };
+  return function(dispatch) {
+    dispatch(doAddTodo(id, name));
+
+    setTimeout(function () {
+      dispatch(doHideNotification(id));
+    }, 3000);
+  }
 }
 
 function doHideNotification(id) {
